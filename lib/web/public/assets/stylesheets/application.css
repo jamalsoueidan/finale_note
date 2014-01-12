@@ -1,0 +1,9 @@
+.pure-g-r > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.pure-form .pure-u-1-2, .pure-form .pure-u-1 {
+    padding: .3em;
+}

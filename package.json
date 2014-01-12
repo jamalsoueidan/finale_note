@@ -1,0 +1,25 @@
+{
+  "name": "finalenote",
+  "description": "Finale note when buying a car",
+  "version": "0.0.1",
+  "author": "Jamal Soueidan <jamal@soueidan.com> (http://jamal.soueidan.com)",
+  "main": "index",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "hapi": "1.8.x",
+    "jamjs": "0.2.x",
+    "jade": "1.1.x",
+    "emailjs": "0.3.x",
+    "pdfkit": "0.2.x"
+  },
+  "jam": {
+    "packageDir": "lib/web/public/assets/javascripts/vendor",
+    "baseUrl": "lib/web/public",
+    "dependencies": {
+      "jquery": "1.9.x",
+      "underscore": null
+    }
+  }
+}

@@ -1,0 +1,83 @@
+extends layout
+
+block content
+  div(class="header")
+    h1 Jamal
+  div(class="content")
+    form(class="pure-form")
+      div(class="pure-g-r")
+        div(class="pure-u-1")
+          button(type="submit" class="pure-button pure-button-primary") Gem og Underskrive
+      div(class="pure-g-r")
+        div(class="pure-u-1-2") 
+          h2 Sælger
+          label(for="seller[name]") Navn
+          input(id="seller[name]" name="seller[name]" type="text" class="pure-input-1")
+
+          label(for="seller[address]") Adresse
+          input(id="seller[address]" name="seller[address]" type="text" class="pure-input-1")
+
+          label(for="seller[city]") Postnr./by
+          input(id="seller[city]" name="seller[city]" type="text" class="pure-input-1")
+
+          label(for="seller[phone]") Telefon
+          input(id="seller[phone]" name="seller[phone]" type="text" class="pure-input-1")
+
+        div(class="pure-u-1-2")
+          h2 Køber
+          label(for="buyer[name]") Navn
+          input(id="buyer[name]" name="buyer[name]" type="text" class="pure-input-1")
+
+          label(for="buyer[address]") Adresse
+          input(id="buyer[address]" name="buyer[address]" type="text" class="pure-input-1")
+
+          label(for="buyer[city]") Postnr./by
+          input(id="buyer[city]" name="buyer[city]" type="text" class="pure-input-1")
+
+          label(for="buyer[phone]") Telefon
+          input(id="buyer[phone]" name="buyer[phone]" type="text" class="pure-input-1")
+
+      div(class="pure-g-r")
+        div(class="pure-u-1-2")
+          h2 Bilen
+          
+          label(for="car[brand]") Mærke
+          input(id="car[brand]" name="car[brand]" type="text" class="pure-input-1")
+
+          label(for="car[model]") Model
+          input(id="car[brand]" name="car[brand]" type="text" class="pure-input-1")
+
+          label(for="car[type]") Type
+          input(id="car[brand]" name="car[brand]" type="text" class="pure-input-1")
+
+          label(for="car[first_registered]") 1. gang indregisteret
+          input(id="car[first_registered]" name="car[first_registered]" type="text" class="pure-input-1")
+
+          label(for="car[last_registered]") Sidste periodiske syn
+          input(id="car[last_registered]" name="car[last_registered]" type="text" class="pure-input-1")
+
+        div(class="pure-u-1-2") 
+          h2(style="color: #fff") Bilen
+
+          label(for="car[chassis_number]") Stelnr.
+          input(id="car[chassis_number]" name="car[chassis_number]" type="text" class="pure-input-1")
+
+          label(for="car[kilometer]") Kørte km.
+          input(id="car[kilometer]" name="car[kilometer]" type="text" class="pure-input-1")
+
+          label(for="car[register_number]") Reg nr.
+          input(id="car[register_number]" name="car[register_number]" type="text" class="pure-input-1")
+
+      div(class="pure-g-r")
+        div(class="pure-u-1")
+          button(type="submit" class="pure-button pure-button-primary") Gem og Underskrive
+
+    script(type="text/javascript").
+      require(['jquery'], function ($) {
+        $("form").submit(function( event ) {
+          event.preventDefault();
+          data = $('form').serialize();
+          $('#main').load("/draw");
+          return false;
+        });
+      });

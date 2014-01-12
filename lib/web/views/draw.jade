@@ -1,0 +1,79 @@
+block content
+  div(class="header")
+    h1 Sælger underskrift
+  div(class="content")
+    canvas(id="pad" style="position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px")
+      p Not Supported
+
+    button(type="submit" id="finish" class="pure-button pure-button-primary" style="position: fixed; right: 0px; bottom: 0px;") Færdig
+
+  script(type="text/javascript").
+    require(['jquery'], function ($) {
+      var canvas, context, draw;
+      draw = {
+        started: false,
+        start: function(event) {
+          context.beginPath();
+          context.moveTo(
+            event.targetTouches[0].pageX,
+            event.targetTouches[0].pageY
+          );
+          
+          this.started = true;
+
+        },
+        move: function(event) {
+          
+          if (this.started) {
+            context.lineTo(
+              event.targetTouches[0].pageX,
+              event.targetTouches[0].pageY
+            );
+            
+            context.stroke();
+          }
+
+        },
+        end: function(event) {
+          this.started = false;
+        }
+      };
+
+      function init(evt) {
+        canvas = document.getElementById('pad');
+        context = canvas.getContext('2d');
+        
+        // Full Window Size Canvas
+        context.canvas.width = window.innerWidth;
+        context.canvas.height = window.innerHeight;
+        
+        // Events
+        canvas.addEventListener('touchstart', draw.start, false);
+        canvas.addEventListener('touchend', draw.end, false);
+        canvas.addEventListener('touchmove', draw.move, false);
+      }
+
+      if(window.addEventListener) {
+        init();
+        window.addEventListener("orientationchange", init, false);
+        document.body.addEventListener('touchmove',function(event){
+          event.preventDefault();
+        },false);
+      }
+
+      function unload() {
+        canvas.removeEventListener('touchstart', draw.start, false);
+        canvas.removeEventListener('touchend', draw.end, false);
+        canvas.removeEventListener('touchmove', draw.move, false);
+
+        $('#pad').remove();
+      }
+
+      $('#finish').click(function() {
+        var canvas = document.getElementById('pad');
+        img = canvas.toDataURL("image/png");
+        data += "&seller[sign_image]=" + encodeURIComponent(img);
+        $.post("http://192.168.1.38:8081/upload", data);
+        unload();
+      })
+    });
