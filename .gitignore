@@ -18,4 +18,6 @@ lib-cov
 lib/web/public/assets/javascripts/vendor/*
 lib/web/public/assets/javascripts/vendor/._*
 lib/web/public/assets/javascripts/vendor/_*
-
+lib/web/public/assets/images/uploads/*
+lib/web/public/assets/images/uploads/._*
+lib/web/public/assets/images/uploads/_*
