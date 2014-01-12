@@ -15,4 +15,7 @@ config.json
 */*/._*
 coverage.*
 lib-cov
+lib/web/public/assets/javascripts/vendor/*
+lib/web/public/assets/javascripts/vendor/._*
+lib/web/public/assets/javascripts/vendor/_*
 
