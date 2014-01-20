@@ -1,0 +1,15 @@
+<form class="form-horizontal" {{action "signup" on="submit"}}>
+  {{#if message}}
+    <div class="alert">{{message}}.</div>
+  {{/if}}
+  <label>Email</label>
+  {{input value=email type="text"}}
+  <br />
+  <label>Password</label>
+  {{input value=password type="password"}}
+  <br />
+  <label>Confirm Password</label>
+  {{input value=password_confirmation type="password"}}
+  <br />
+  <button type="submit" class="btn">Sign up!</button>
+</form>

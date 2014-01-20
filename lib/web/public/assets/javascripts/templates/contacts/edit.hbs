@@ -1,0 +1,6 @@
+<h1>Edit contacts</h1>
+      
+{{partial 'contacts/form'}}
+
+<button {{action 'update' content}}>Save</button>
+- {{#link-to "contacts.index"}}Cancel{{/link-to}}

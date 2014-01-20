@@ -1,0 +1,13 @@
+<h1>Kontakter</h1>
+
+{{#link-to "contacts.new"}}Create{{/link-to}}
+
+<ul>
+  {{#each}}
+  <li>
+    {{name}}
+    {{#link-to "contacts.edit" this}}edit{{/link-to}}
+    {{#link-to-confirm action='remove' item=this}}Delete{{/link-to-confirm}}
+  </li>
+  {{/each}}
+</ul>

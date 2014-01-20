@@ -1,0 +1,9 @@
+<h1>Opret</h1>
+
+<form>
+  <label>State</label>
+  {{view Ember.TextField valueBinding=state}}
+  <br />
+</form>
+
+<button {{action 'create' content}}>Create</button>

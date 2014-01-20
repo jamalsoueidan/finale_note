@@ -4,125 +4,16 @@
     <title>Slutseddle</title>
   </head>
   <body>
-
-    <script type="text/x-handlebars" data-template-name="notes">
-      notes<br />
-      
-      <table>
-          {{#each note in model}}
-              <tr>
-                <td>{{note.state}}</td>
-                <td>{{note.seller_id.name}}</td>
-              </tr>
-          {{/each}}
-      </table>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="contacts/form">
-    {{#with model}}
-      <form>
-        <label>Name</label>
-        {{view Ember.TextField valueBinding="name" name="name" placeholder="name"}}
-        <br />
-
-        <button type="submit">
-        {{#if id}}Update{{else}}Create{{/if}}
-        </button>
-      </form>
-    {{/with}}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="contacts/edit">
-      <h1>edit {{model.name}} contacts</h1>
-      
-      {{partial 'contacts/form'}}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="contacts/new">
-      <h1>new contacts</h1>
-      
-      {{partial 'contacts/form'}}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="contacts">
-      <h1>Contacts</h1>
-
-      {{#link-to "contacts.new"}}Create{{/link-to}}
-
-      <ul>
-        {{#each itemController="contact"}}
-          <li>{{name}} 
-            <a href="#" {{action 'edit' this}}>edit</a>
-            <a href="#" {{action 'destroy' this}}>Delete</a>
-          </li>
-        {{/each}}
-      </ul>
-
-      {{outlet}}
-    </script>
-
-    <script type="text/x-handlebars" id="loggedin">
-      {{#link-to 'logout'}}Logout{{/link-to}}
-      {{#link-to "notes"}}Notes{{/link-to}}
-      {{#link-to "contacts"}}Contacts{{/link-to}}
-
-      {{yield}}
-    </script>
-
-    <script type="text/x-handlebars" id="guest">
-      {{#link-to 'login'}} Login {{/link-to}}
-      {{#link-to 'signup'}} Signup {{/link-to}}
-
-      {{yield}}
-    </script>
-
-    <script type="text/x-handlebars" id="overview">
-      hej med dig
-    </script>
-
-    <script type="text/x-handlebars" id="login">
-      {{#if message}}
-        <div class="alert">{{message}}.</div>
-      {{/if}}
-      
-      <form {{action "login" on="submit"}}>
-        <label>Email</label>
-        {{input value=email type="text"}}
-        <br />
-        <label>Password</label>
-        {{input value=password type="password"}}
-        <br />
-        <button type="submit" class="btn">Log in!</button>
-      </form>
-    </script>
-
-    <script type="text/x-handlebars" id="signup">      
-      <form class="form-horizontal" {{action "signup" on="submit"}}>
-        {{#if message}}
-          <div class="alert">{{message}}.</div>
-        {{/if}}
-        <label>Email</label>
-        {{input value=email type="text"}}
-        <br />
-        <label>Password</label>
-        {{input value=password type="password"}}
-        <br />
-        <label>Confirm Password</label>
-        {{input value=password_confirmation type="password"}}
-        <br />
-        <button type="submit" class="btn">Sign up!</button>
-    </form>
-    </script>
-
     <script src="assets/javascripts/libs/jquery/jquery.min.js"></script>
     <script src="assets/javascripts/libs/handlebars/handlebars.min.js"></script>
     <script src="assets/javascripts/libs/ember/ember.js"></script>
     <script src="assets/javascripts/libs/ember-data/ember-data.js"></script>
+    <script src="assets/javascripts/templates.js"></script>
     <script src="assets/javascripts/app.js"></script>
+    <script src="assets/javascripts/components/link_to_confirm.js"></script>
     <script src="assets/javascripts/account.js"></script>
     <script src="assets/javascripts/notes.js"></script>
     <script src="assets/javascripts/contacts.js"></script>
     <script src="assets/javascripts/overview.js"></script>
-    
   </body>
 </html>
