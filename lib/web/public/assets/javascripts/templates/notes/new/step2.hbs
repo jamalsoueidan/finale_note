@@ -1,0 +1,31 @@
+<h3>Udfyld bil informationer</h3>
+
+
+{{model.state}}
+
+{{model.buyer_id.name}}
+
+<form>
+  <label>Regnr</label>
+  {{view Ember.TextField valueBinding="name"}}
+  <br />
+  <label>Mærke</label>
+  {{view Ember.TextField valueBinding="address"}}
+  <br />
+  <label>Model</label>
+  {{view Ember.TextField valueBinding="city"}}
+  <br />
+  <label>Model årgang</label>
+  {{view Ember.TextField valueBinding="postcode"}}
+  <br />
+  <label>Stelnummer</label>
+  {{view Ember.TextField valueBinding="phone"}}
+  <br />
+  <label>Km-tæller viser</label>
+  {{view Ember.TextField valueBinding="email"}}
+  <br />
+  
+  <label>Km-tæller viser</label>
+  {{view Ember.TextField valueBinding="email"}}
+  <br />
+</form>
