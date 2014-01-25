@@ -4,7 +4,7 @@
 
 <ul>
   {{#each}}
-    <li>{{state}} 
+    <li>{{#link-to 'notes.show' this}}{{state}}{{/link-to}}
       {{#link-to-confirm action='remove' item=this}}Delete{{/link-to-confirm}}
     </li>
   {{/each}}
