@@ -1,0 +1,16 @@
+<h3>Udfyld sælger og køber</h3>
+
+Kontakter i databasen. {{contacts.length}}
+
+State: {{model.seller_id.name}}
+
+<form
+<h5>Sælger:</h5>
+
+{{contact-form content=contacts valueBinding="seller" newRecord=seller_new_record}}
+
+<h5>Køber</h5>
+
+{{contact-form content=contacts valueBinding="buyer" newRecord=buyer_new_record}}
+
+<button type="submit">Next</button>

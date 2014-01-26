@@ -1,0 +1,23 @@
+<label>Name</label>
+{{input valueBinding="name" type="text"}}
+<ul>
+  {{#each item in items}}
+    <li><a href="#" {{action 'choose' item}}>{{item.name}}</a></li>
+  {{/each}}
+</ul>  
+<br />
+<label>Addresse</label>
+{{input valueBinding="address" type="text" disabledBinding="isDisabled"}}
+<br />
+<label>By</label>
+{{input valueBinding="city" type="text" disabledBinding="isDisabled"}}
+<br />
+<label>Post</label>
+{{input valueBinding="postcode" type="text" disabledBinding="isDisabled"}}
+<br />
+<label>Phone</label>
+{{input valueBinding="phone" type="text" disabledBinding="isDisabled"}}
+<br />
+<label>Email</label>
+{{input valueBinding="email" type="text" disabledBinding="isDisabled"}}
+<br />

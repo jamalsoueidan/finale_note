@@ -1,0 +1,31 @@
+<h3>Udfyld bil informationer</h3>
+
+
+{{model.state}}
+
+{{model.buyer_id.name}}
+
+<form>
+  <label>Regnr</label>
+  {{view Ember.TextField valueBinding="car.register_number"}}
+  <br />
+  <label>Mærke</label>
+  {{view Ember.TextField valueBinding="car.brand"}}
+  <br />
+  <label>Model</label>
+  {{view Ember.TextField valueBinding="car.model_name"}}
+  <br />
+  <label>Model årgang</label>
+  {{view Ember.TextField valueBinding="car.model_year"}}
+  <br />
+  <label>Stelnummer</label>
+  {{view Ember.TextField valueBinding="car.vin"}}
+  <br />
+  <label>Km-tæller viser</label>
+  {{view Ember.TextField valueBinding="car.miles"}}
+  <br />
+
+  <br />
+</form>
+
+<button {{action 'save'}}>Save</button>

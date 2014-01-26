@@ -1,0 +1,22 @@
+{{model.state}}
+
+<h2>Sælger</h2>
+<strong>{{model.seller_id.name}}</strong><br />
+{{model.seller_id.address}}<br />
+{{model.seller_id.city}}<br />
+{{model.seller_id.postcode}}<br />
+
+<h2>Køber</h2>
+<strong>{{model.buyer_id.name}}</strong><br />
+{{model.buyer_id.address}}<br />
+{{model.buyer_id.city}}<br />
+{{model.buyer_id.postcode}}<br />
+
+<button {{action "updateContact"}}>Ændre kontakt info</button>
+
+<h2>Bil</h2>
+<strong>{{model.car_id.model_name}}</strong><br />
+{{model.car_id.brand}}<br />
+{{model.car_id.model_year}}<br />
+
+<button {{action "updateCar"}}>Ændre bil info</button>
