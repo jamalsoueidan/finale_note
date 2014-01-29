@@ -6,6 +6,8 @@
 <button style="background-color:#FF0040" {{action "sendMail" model}}>Send slutseddle</button>
 {{/if}}
 
+<button style="background-color:#CCC" {{action "download" model}}>Vis slutseddle</button>
+
 <h2>Sælger</h2>
 <strong>{{model.seller_id.name}}</strong><br />
 {{model.seller_id.address}}<br />

@@ -24,4 +24,7 @@ lib/web/public/assets/javascripts/libs/_*
 lib/web/public/assets/images/uploads/*
 lib/web/public/assets/images/uploads/._*
 lib/web/public/assets/images/uploads/_*
+lib/web/public/assets/pdf/*
+lib/web/public/assets/pdf/._*
+lib/web/public/assets/pdf/_*
 lib/web/public/assets/javascripts/templates.js
