@@ -1,16 +1,30 @@
-{{model.state}}
+<h1>Oplysninger</h1>
+
+{{#if mailSent}}
+  Mail er nu sendt til dig :)
+{{else}}
+<button style="background-color:#FF0040" {{action "sendMail" model}}>Send slutseddle</button>
+{{/if}}
 
 <h2>Sælger</h2>
 <strong>{{model.seller_id.name}}</strong><br />
 {{model.seller_id.address}}<br />
 {{model.seller_id.city}}<br />
 {{model.seller_id.postcode}}<br />
+{{model.seller_id.email}}<br />
+{{#link-to 'notes.show.sign_contract' model.id 'seller'}}Underskriv{{/link-to}}<br />
+
+<img {{bind-attr src=model.seller_sign}} width="200" height="100"/>
 
 <h2>Køber</h2>
 <strong>{{model.buyer_id.name}}</strong><br />
 {{model.buyer_id.address}}<br />
 {{model.buyer_id.city}}<br />
 {{model.buyer_id.postcode}}<br />
+{{model.buyer_id.email}}<br />
+{{#link-to 'notes.show.sign_contract' model.id 'buyer'}}Underskriv{{/link-to}}<br />
+
+<img {{bind-attr src=model.buyer_sign}} width="200" height="100"/><br />
 
 <button {{action "updateContact"}}>Ændre kontakt info</button>
 
@@ -20,3 +34,4 @@
 {{model.car_id.model_year}}<br />
 
 <button {{action "updateCar"}}>Ændre bil info</button>
+
